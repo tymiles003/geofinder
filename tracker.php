@@ -1,3 +1,8 @@
+<-- This file generates id key and writes location to server file. It should be called with:
+	&lat=....
+	&lon=....
+TODO allow using exisitng id for continuous tracking -->
+
 <?php
 function makeid($length = 5) {
 	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
