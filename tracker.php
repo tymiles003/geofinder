@@ -21,5 +21,5 @@ function makeid($length = 5) {
 	$fh = fopen($fpath, 'w');
 	fwrite($fh, serialize($info));
 	fclose($fh);
-	echo "<a href=http://balinkrowka.dlinkddns.com/map/map.php?key=" . $id . ">Link to your tracker</a>";
+	echo "<a href=http://balinkrowka.dlinkddns.com/geotracker/map.php?key=" . $id . ">Link to your tracker</a>";
 ?>
