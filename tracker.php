@@ -8,6 +8,11 @@
 	include "settings.php";
 	$info['lat'] = round($_GET['lat'], $accuracy);
 	$info['lon'] = round($_GET['lon'], $accuracy);
+	$info['timestamp'] = $_GET['timestamp'];
+	$info['hdop'] = $_GET['hdop'];
+	$info['altitude'] = $_GET['altitude'];
+	$info['speed'] = $_GET['speed'];
+	$info['bearing'] = $_GET['bearing'];
 	$key = $_GET['key'];
 	$fpath = $filePath . '-' . $key;
 	$fh = fopen($fpath, 'w');
