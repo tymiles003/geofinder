@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><title>Geo Tracker</title></head>
+<script>
+	function geo_show_location() {
+		var tracker = "http://balinkrowka.dlinkddns.com/map/tracker.php";
+		var output = document.getElementById("out");
+
+		if (!navigator.geolocation){
+			output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+			return;
+		}
+
+		function success(position) {
+			var latitude  = position.coords.latitude;
+			var longitude = position.coords.longitude;
+
+			var img = new Image();
+			img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
+			output.appendChild(img);
+
+			var xmlHttp = null;
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude, false );
+			xmlHttp.send( null );
+			output.innerHTML = xmlHttp.responseText;
+
+		};
+
+		function error() {
+			output.innerHTML = "Unable to retrieve your location";
+		};
+
+		output.innerHTML = "<p>Locating..</p>";
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
+
+</script>
+<style type="text/css">  
+@media all and (max-width:10cm) {
+	button { width:100%;
+	}
+} 
+@media all and (min-width:10cm){
+	button { width:50%;
+	}
+} 
+	button { width:50%;
+		font-size:2cm;
+	}
+	div { font-size:2cm; }
+	img { width: 100%;}
+</style>
+<body>
+	<link rel="shortcut icon" href="./favicon.ico" />
+	<p><button onclick="geo_show_location()">Track my location</button></p>
+	<div id="out"></div>
+</body>
+</html>
+
