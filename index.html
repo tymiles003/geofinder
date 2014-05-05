@@ -5,6 +5,16 @@
 <html>
 <head><title>Geo Tracker</title></head>
 <script>
+	function generate_id() {
+		var key = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for( var i = 0; i < 5; i++ )
+			key += possible.charAt(Math.floor(Math.random() * possible.length));
+
+		return key;
+	}
+
 	function geo_show_location() {
 		var tracker = "http://balinkrowka.dlinkddns.com/geotracker/tracker.php";
 		var output = document.getElementById("out");
@@ -15,19 +25,20 @@
 		}
 
 		function success(position) {
+			id = generate_id();
 			var latitude  = position.coords.latitude;
 			var longitude = position.coords.longitude;
-
+			var xmlHttp = null;
 			var img = new Image();
+
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
+			xmlHttp.send( null );
+
+			output.innerHTML = "<a href=http://balinkrowka.dlinkddns.com/geotracker/map.php?key=" + id + ">Link to your tracker</a>";
+
 			img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 			output.appendChild(img);
-
-			var xmlHttp = null;
-			xmlHttp = new XMLHttpRequest();
-			xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude, false );
-			xmlHttp.send( null );
-			output.innerHTML = xmlHttp.responseText;
-
 		};
 
 		function error() {

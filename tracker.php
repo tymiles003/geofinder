@@ -1,25 +1,16 @@
-<!-- This file generates id key and writes location to server file. It should be called with:
-	&lat=....
-	&lon=....
-TODO allow using exisitng id for continuous tracking -->
+<!-- This file writes location to server file. It should be called with:
+	&lat=.....
+	&lon=.....
+	&key=.....
+-->
 
 <?php
-function makeid($length = 5) {
-	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	$id = '';
-	for ($i = 0; $i < $length; $i++) {
-		$id .= $characters[rand(0, strlen($characters) - 1)];
-	}
-	return $id;
-}
-
 	include "settings.php";
 	$info['lat'] = round($_GET['lat'], $accuracy);
 	$info['lon'] = round($_GET['lon'], $accuracy);
-	$id = makeid();
-	$fpath = $filePath . '-' . $id;
+	$key = $_GET['key'];
+	$fpath = $filePath . '-' . $key;
 	$fh = fopen($fpath, 'w');
 	fwrite($fh, serialize($info));
 	fclose($fh);
-	echo "<a href=http://balinkrowka.dlinkddns.com/geotracker/map.php?key=" . $id . ">Link to your tracker</a>";
 ?>
