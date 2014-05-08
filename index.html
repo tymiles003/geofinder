@@ -16,7 +16,7 @@
 	}
 
 	function geo_show_location() {
-		var tracker = "http://balinkrowka.dlinkddns.com/geotracker/tracker.php";
+		var tracker = "http://79.97.111.186/geofinder.eu/tracker.php";
 		var output = document.getElementById("out");
 
 		if (!navigator.geolocation){
@@ -35,7 +35,7 @@
 			xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
 			xmlHttp.send( null );
 
-			output.innerHTML = "<a href=http://balinkrowka.dlinkddns.com/geotracker/map.php?key=" + id + ">Link to your tracker</a>";
+			output.innerHTML = "<a href=http://79.97.111.186/geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
 
 			img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 			output.appendChild(img);
