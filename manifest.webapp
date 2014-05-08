@@ -3,7 +3,7 @@
   "package_path": "http://geofinder.eu/geofinder.zip",
   "version": "0.1",
   "release_notes": "Initial release",
-  "launch_path": "/index.html", 
+  "launch_path": "/geofinder.eu/index.html", 
   "developer": {
     "name": "Przemo Firszt",
     "url": "http://geofinder.eu/"
