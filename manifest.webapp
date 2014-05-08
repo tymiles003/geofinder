@@ -14,12 +14,10 @@
     }
   },
   "icons": {
-    "128": "/icons/icon-128.png",
+    "128": "/icons/icon-128.png"
   },
-"permissions": 
-  {
-    "geolocation": 
-    {
+  "permissions": {
+    "geolocation": {
       "description": "This app is all about location, so it can't work without it!"
     }
   }
