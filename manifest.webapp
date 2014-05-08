@@ -1,11 +1,12 @@
 {
   "name": "Geofinder - share your location",
-  "package_path": "http://goefinder.eu/geofinder.zip",
+  "package_path": "http://geofinder.eu/geofinder.zip",
   "version": "0.1",
   "release_notes": "Initial release",
+  "launch_path": "/index.html", 
   "developer": {
     "name": "Przemo Firszt",
-    "url": "http://goefinder.eu/"
+    "url": "http://geofinder.eu/"
   },
   "locales": {
     "pl-PL": {
@@ -13,10 +14,8 @@
     }
   },
   "icons": {
-    "16": "/icons/16.png",
-    "32": "/icons/32.png",
-    "256": "/icons/256.png"
-  }
+    "128": "/icons/icon-128.png",
+  },
 "permissions": 
   {
     "geolocation": 
