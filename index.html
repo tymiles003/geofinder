@@ -51,19 +51,24 @@
 
 </script>
 <style type="text/css">  
-@media all and (max-width:10cm) {
+@media screen and (min-aspect-ratio: 16/9) {
+	button { width:20%;
+		font-size:2em;
+	}
+}
+@media screen and (max-aspect-ratio: 16/9) {
+	button { width:33%;
+		font-size:2em;
+	}
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
 	button { width:100%;
+		font-size:2em;
 	}
-} 
-@media all and (min-width:10cm){
-	button { width:50%;
-	}
-} 
-	button { width:50%;
-		font-size:2cm;
-	}
-	div { font-size:2cm; }
-	img { width: 100%;}
+}
+	div { font-size:2em; }
+	img { width: 100%; }
 </style>
 <body>
 	<link rel="shortcut icon" href="./icons/favicon.ico" />
