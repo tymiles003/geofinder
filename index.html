@@ -16,6 +16,12 @@
 	}
 
 	function geo_show_location() {
+		var options = {
+			enableHighAccuracy: true,
+			timeout: 5000,
+			maximumAge: 0
+		};
+
 		var tracker = "http://79.97.111.186/geofinder.eu/tracker.php";
 		var output = document.getElementById("out");
 
@@ -46,7 +52,7 @@
 		};
 
 		output.innerHTML = "<p>Locating..</p>";
-		navigator.geolocation.getCurrentPosition(success, error);
+		navigator.geolocation.getCurrentPosition(success, error, options);
 	}
 
 </script>
