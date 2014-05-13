@@ -7,28 +7,9 @@
 
 <script src="script/location.js"></script>
 
-<style type="text/css">  
-@media screen and (min-aspect-ratio: 16/9) {
-	button { width:20%;
-		font-size:2em;
-	}
-}
-@media screen and (max-aspect-ratio: 16/9) {
-	button { width:33%;
-		font-size:2em;
-	}
-}
-
-@media screen and (max-aspect-ratio: 4/3) {
-	button { width:100%;
-		font-size:2em;
-	}
-}
-	div { font-size:2em; }
-	img { width: 100%; }
-</style>
 <body>
 	<link rel="shortcut icon" href="./icons/favicon.ico" />
+	<link rel="stylesheet" href="./style/style.css">
 	<p style="text-align:center;" ><button onclick="geo_show_location()">Track my location</button></p>
 	<div id="out"></div>
 </body>
