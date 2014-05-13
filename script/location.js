@@ -10,9 +10,9 @@ function generate_id() {
 
 function geo_show_location() {
 	var options = {
-		enableHighAccuracy: false,
-		timeout: 5000,
-		maximumAge: 0
+		enableHighAccuracy: true,
+		timeout: 6000,
+		maximumAge: 1000
 	};
 
 	var tracker = "http://geofinder.eu/tracker.php";
