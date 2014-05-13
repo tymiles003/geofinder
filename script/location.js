@@ -36,7 +36,7 @@ function show_location() {
 		map_img.appendChild(img);
 		info.innerHTML = "Lat: " + latitude + " Lon:" + longitude;
 		id = generate_id();
-		track_location(lat, lon, id);
+		track_location(latitude, longitude, id);
 	};
 
 	function error() {

@@ -1,4 +1,4 @@
-<!-- This file shows location on map. It has to be called with &key=..... to pull info from correcponding location fie -->
+<!-- This file shows location on map. It has to be called with &key=..... to pull info from correcponding location file -->
 <html>
 <head> <title>Location</title> </head>
 
