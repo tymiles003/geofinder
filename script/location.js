@@ -15,7 +15,7 @@ function geo_show_location() {
 		maximumAge: 1000
 	};
 
-	var tracker = "http://geofinder.eu/tracker.php";
+	var tracker = "http://www.geofinder.eu/tracker.php";
 	var output = document.getElementById("out");
 
 	if (!navigator.geolocation){
@@ -34,7 +34,7 @@ function geo_show_location() {
 		xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
 		xmlHttp.send( null );
 
-		output.innerHTML = "<a href=http://geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
+		output.innerHTML = "<a href=http://www.geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
 
 		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 		output.appendChild(img);
