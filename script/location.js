@@ -35,6 +35,8 @@ function show_location() {
 		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 		map_img.appendChild(img);
 		info.innerHTML = "Lat: " + latitude + " Lon:" + longitude;
+		id = generate_id();
+		track_location(lat, lon, id);
 	};
 
 	function error() {
@@ -45,13 +47,11 @@ function show_location() {
 	navigator.geolocation.getCurrentPosition(success, error, options);
 }
 
-function track_location() {
+function track_location(lat, lon, id) {
 	var tracker_div = document.getElementById("tracker");
 
-	id = generate_id();
 	xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", server + tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
-	alert( server + tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id );
+	xmlHttp.open( "GET", server + tracker + "?lat=" + lat + "&lon=" + lon + "&key=" + id, false );
 	xmlHttp.send( null );
 
 	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
