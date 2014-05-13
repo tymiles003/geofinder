@@ -1,3 +1,6 @@
+const server = "http://www.geofinder.eu/";
+const tracker = "tracker.php/";
+
 function generate_id() {
 	var key = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -8,43 +11,49 @@ function generate_id() {
 	return key;
 }
 
-function geo_show_location() {
+function show_location() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
 		maximumAge: 1000
 	};
 
-	var tracker = "http://www.geofinder.eu/tracker.php";
-	var output = document.getElementById("out");
+	var info = document.getElementById("info");
+	var map_img = document.getElementById("map");
 
 	if (!navigator.geolocation){
-		output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+		info.innerHTML = "<p>Geolocation is not supported by your browser</p>";
 		return;
 	}
 
 	function success(position) {
-		id = generate_id();
 		var latitude  = position.coords.latitude;
 		var longitude = position.coords.longitude;
 		var xmlHttp = null;
 		var img = new Image();
 
-		xmlHttp = new XMLHttpRequest();
-		xmlHttp.open( "GET", tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
-		xmlHttp.send( null );
-
-		output.innerHTML = "<a href=http://www.geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
-
 		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
-		output.appendChild(img);
+		map_img.appendChild(img);
+		info.innerHTML = "Lat: " + latitude + " Lon:" + longitude;
 	};
 
 	function error() {
-		output.innerHTML = "Unable to retrieve your location";
+		info.innerHTML = "Unable to retrieve your location";
 	};
 
-	output.innerHTML = "<p>Locating..</p>";
+	info.innerHTML = "<p>Locating..</p>";
 	navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function track_location() {
+	var tracker_div = document.getElementById("tracker");
+
+	id = generate_id();
+	xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", server + tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id, false );
+	alert( server + tracker + "?lat=" + latitude + "&lon=" + longitude + "&key=" + id );
+	xmlHttp.send( null );
+
+	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
 }
 
