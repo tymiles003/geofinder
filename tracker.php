@@ -6,11 +6,12 @@
 
 <?php
 	include "settings.php";
-	$info['lat'] = round($_GET['lat'], $accuracy);
-	$lat = round($_GET['lat'], $accuracy);
-	$info['lon'] = round($_GET['lon'], $accuracy);
-	$lon = round($_GET['lon'], $accuracy);
 	$info['timestamp'] = $_GET['timestamp'];
+	$lat = round($_GET['lat'], $accuracy);
+	$info['lat'] = $lat;
+	$lon = round($_GET['lon'], $accuracy);
+	$info['lot'] = $lot;
+	$info['lon'] = round($_GET['lon'], $accuracy);
 	$info['hdop'] = $_GET['hdop'];
 	$info['altitude'] = $_GET['altitude'];
 	$info['speed'] = $_GET['speed'];
@@ -26,7 +27,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$sql="INSERT INTO location VALUES (3, NOW()," . $lat . "," . $lon . ");";
+	$sql="INSERT INTO location VALUES (4, NOW()," . $lat . "," . $lon . ");";
 
 	if (mysqli_query($con,$sql)) {
 		echo "Location written";
