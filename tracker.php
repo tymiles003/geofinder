@@ -6,7 +6,6 @@
 
 <?php
 	include "settings.php";
-	$info['tid'] = $_GET['tid'];
 	$info['timestamp'] = $_GET['timestamp'];
 	$lat = round($_GET['lat'], $accuracy);
 	$info['lat'] = $lat;
@@ -27,7 +26,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$sql="INSERT INTO location (tid, timestamp, latitude, longitude) VALUES ( tid, NOW()," . $lat . "," . $lon . ");";
+	$sql="INSERT INTO location (tid, timestamp, latitude, longitude) VALUES ('" . $tid . "', NOW()," . $lat . "," . $lon . ");";
 
 	if (mysqli_query($con,$sql)) {
 		echo "Location written";
