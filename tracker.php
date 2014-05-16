@@ -11,8 +11,7 @@
 	$lat = round($_GET['lat'], $accuracy);
 	$info['lat'] = $lat;
 	$lon = round($_GET['lon'], $accuracy);
-	$info['lot'] = $lot;
-	$info['lon'] = round($_GET['lon'], $accuracy);
+	$info['lon'] = $lon;
 	$info['hdop'] = $_GET['hdop'];
 	$info['altitude'] = $_GET['altitude'];
 	$info['speed'] = $_GET['speed'];
