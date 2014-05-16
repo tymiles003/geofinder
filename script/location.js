@@ -2,13 +2,13 @@ const server = "http://www.geofinder.eu/";
 const tracker = "tracker.php/";
 
 function generate_id() {
-	var key = "";
+	var tid = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 	for( var i = 0; i < 5; i++ )
-		key += possible.charAt(Math.floor(Math.random() * possible.length));
+		tid += possible.charAt(Math.floor(Math.random() * possible.length));
 
-	return key;
+	return tid;
 }
 
 function show_location() {
@@ -51,9 +51,9 @@ function track_location(lat, lon, id) {
 	var tracker_div = document.getElementById("tracker");
 
 	xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", server + tracker + "?lat=" + lat + "&lon=" + lon + "&key=" + id, false );
+	xmlHttp.open( "GET", server + tracker + "?lat=" + lat + "&lon=" + lon + "&tid=" + id, false );
 	xmlHttp.send( null );
 
-	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?key=" + id + ">Link to your tracker</a>";
+	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?tid=" + id + ">Link to your tracker</a>";
 }
 

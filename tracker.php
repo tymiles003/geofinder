@@ -6,6 +6,7 @@
 
 <?php
 	include "settings.php";
+	$info['tid'] = $_GET['tid'];
 	$info['timestamp'] = $_GET['timestamp'];
 	$lat = round($_GET['lat'], $accuracy);
 	$info['lat'] = $lat;
