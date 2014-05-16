@@ -27,7 +27,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$sql="INSERT INTO location VALUES (4, NOW()," . $lat . "," . $lon . ");";
+	$sql="INSERT INTO location (timestamp, latitude, longitude) VALUES ( NOW()," . $lat . "," . $lon . ");";
 
 	if (mysqli_query($con,$sql)) {
 		echo "Location written";
