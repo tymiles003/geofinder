@@ -1,11 +1,11 @@
-<!-- This file shows location on map. It has to be called with &key=..... to pull info from correcponding location file -->
+<!-- This file shows location on map. It has to be called with &tid=..... to pull info from correcponding location file -->
 <html>
 <head> <title>Location</title> </head>
 
 <?php
 	include "settings.php";
-	$key = $_GET['key'];
-	$loc_string = file_get_contents($filePath . '-' . $key);
+	$tid = $_GET['tid'];
+	$loc_string = file_get_contents($filePath . '-' . $tid);
 	$info = unserialize($loc_string);
 	$lat = $info['lat'];
 	$lon = $info['lon'];

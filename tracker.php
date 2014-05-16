@@ -1,7 +1,7 @@
 <!-- This file writes location to server file. It should be called with:
 	&lat=.....
 	&lon=.....
-	&key=.....
+	&tid=.....
 -->
 
 <?php
@@ -16,8 +16,8 @@
 	$info['altitude'] = $_GET['altitude'];
 	$info['speed'] = $_GET['speed'];
 	$info['bearing'] = $_GET['bearing'];
-	$key = $_GET['key'];
-	$fpath = $filePath . '-' . $key;
+	$tid = $_GET['tid'];
+	$fpath = $filePath . '-' . $tid;
 	$fh = fopen($fpath, 'w');
 	fwrite($fh, serialize($info));
 	fclose($fh);
@@ -27,7 +27,7 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$sql="INSERT INTO location (timestamp, latitude, longitude) VALUES ( NOW()," . $lat . "," . $lon . ");";
+	$sql="INSERT INTO location (tid, timestamp, latitude, longitude) VALUES ( tid, NOW()," . $lat . "," . $lon . ");";
 
 	if (mysqli_query($con,$sql)) {
 		echo "Location written";
