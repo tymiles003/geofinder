@@ -1,0 +1,11 @@
+mysql> show columns in location;
++-----------+---------------+------+-----+---------+----------------+
+| Field     | Type          | Null | Key | Default | Extra          |
++-----------+---------------+------+-----+---------+----------------+
+| id        | int(11)       | NO   | PRI | NULL    | auto_increment |
+| tid       | char(6)       | YES  |     | NULL    |                |
+| timestamp | time          | YES  |     | NULL    |                |
+| latitude  | decimal(11,6) | YES  |     | NULL    |                |
+| longitude | decimal(11,6) | YES  |     | NULL    |                |
++-----------+---------------+------+-----+---------+----------------+
+
