@@ -1,6 +1,6 @@
 {
   "name": "Geofinder - share your location",
-  "package_path": "http://geofinder.eu/geofinder.zip",
+  "package_path": "http://www.geofinder.eu/geofinder.zip",
   "version": "0.1",
   "release_notes": "Initial release",
   "launch_path": "/index.html", 
