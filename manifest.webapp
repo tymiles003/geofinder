@@ -1,24 +1,23 @@
 {
-  "name": "Geofinder - share your location",
-  "package_path": "http://www.geofinder.eu/geofinder.zip",
-  "version": "0.1",
-  "release_notes": "Initial release",
-  "launch_path": "/index.html", 
-  "developer": {
-    "name": "Przemo Firszt",
-    "url": "http://geofinder.eu/"
-  },
-  "locales": {
-    "pl-PL": {
-      "name": "Łatwe dzielenie się swoją lokalizacją? geofinder.eu!"
-    }
-  },
-  "icons": {
-    "128": "/icons/icon-128.png"
-  },
-  "permissions": {
-    "geolocation": {
-      "description": "This app is all about location, so it can't work without it!"
-    }
-  }
+	"name": "GeoFinder",
+	"description": "GeoFinder - sharing location has never been easier",
+	"version": "0.1",
+	"developer": {
+		"name": "Przemo Firszt",
+		"url": "http://geofinder.eu/"
+	},
+	"default_locale": "en-EN",
+	"icons": {
+		"16": "/images/geofinder-16.png",
+		"30": "/images/geofinder-30.png",
+		"32": "/images/geofinder-32.png",
+		"60": "/images/geofinder-60.png",
+		"120": "/images/geofinder-120.png",
+		"256": "/images/geofinder-256.png"
+	},
+	"permissions": {
+		"geolocation": {
+			"description": "This app is all about location, so it can't work without it!"
+		}
+	}
 }
