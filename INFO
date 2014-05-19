@@ -4,8 +4,9 @@ mysql> show columns in location;
 +-----------+---------------+------+-----+---------+----------------+
 | id        | int(11)       | NO   | PRI | NULL    | auto_increment |
 | tid       | char(6)       | NO   |     | NULL    |                |
-| timestamp | time          | YES  |     | NULL    |                |
+| timestamp | datetime      | YES  |     | NULL    |                |
 | latitude  | decimal(11,6) | YES  |     | NULL    |                |
 | longitude | decimal(11,6) | YES  |     | NULL    |                |
 +-----------+---------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
 
