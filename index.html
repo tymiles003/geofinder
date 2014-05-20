@@ -11,12 +11,15 @@
 <body>
 	<link rel="shortcut icon" href="./images/favicon.ico" />
 	<link rel="stylesheet" href="./style/style.css">
+	<button id="toggle_tracking_btn" >Start tracking</button>
 	<div id="info"></div>
 	<div id="tracker"></div>
 	<div id="map"></div>
 	<script type="text/javascript">
 		$( document ).ready(function() {
-			show_location();	
+			$("#toggle_tracking_btn").click(function(){
+				toggle_tracking();
+			});
 		});
 	</script>
 </body>

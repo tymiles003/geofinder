@@ -1,5 +1,7 @@
 const server = "http://www.geofinder.eu/";
 const tracker = "tracker.php/";
+var tracking_active = 0;
+var tracking_active_id = 0;
 
 function generate_id() {
 	var tid = "";
@@ -57,3 +59,14 @@ function track_location(lat, lon, id) {
 	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?tid=" + id + ">Link to your tracker</a>";
 }
 
+function toggle_tracking() {
+	if ( !tracking_active ) {
+		tracking_active = 1;
+		tracking_active_id = setInterval ("show_location()", 10000);
+		$("#toggle_tracking_btn").text("Stop tracking");
+	} else {
+		tracking_active = 0;
+		clearInterval (tracking_active_id);
+		$("#toggle_tracking_btn").text("Start tracking");
+	}
+}
