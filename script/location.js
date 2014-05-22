@@ -2,6 +2,9 @@ const server = "http://www.geofinder.eu/";
 const tracker = "tracker.php/";
 var tracking_active = 0;
 var tracking_active_id = 0;
+var location_obtained = 0;
+var latitude;
+var longitude;
 
 function generate_id() {
 	var tid = "";
@@ -13,38 +16,24 @@ function generate_id() {
 	return tid;
 }
 
-function show_location() {
+function get_location() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
 		maximumAge: 1000
 	};
 
-	var info = document.getElementById("info");
-	var map_img = document.getElementById("map");
-
-	if (!navigator.geolocation){
-		info.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-		return;
-	}
-
 	function success(position) {
-		var latitude  = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		var xmlHttp = null;
-		var img = new Image();
-
-		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
-		map_img.appendChild(img);
-		info.innerHTML = "Lat: " + latitude + " Lon:" + longitude;
-		id = generate_id();
-		track_location(latitude, longitude, id);
+		latitude  = position.coords.latitude;
+		longitude = position.coords.longitude;
+		location_obtained = 1; 
 	};
 
 	function error() {
-		info.innerHTML = "Unable to retrieve your location";
+		location_obtained = 0; 
 	};
 
+	show_location();
 	info.innerHTML = "<p>Locating..</p>";
 	navigator.geolocation.getCurrentPosition(success, error, options);
 }
@@ -59,10 +48,34 @@ function track_location(lat, lon, id) {
 	tracker_div.innerHTML = "<a href=http://www.geofinder.eu/map.php?tid=" + id + ">Link to your tracker</a>";
 }
 
+function show_location() {
+	var info = document.getElementById("info");
+	var map_img = document.getElementById("map");
+
+	if (!navigator.geolocation){
+		info.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+		return;
+	}
+
+	if (location_obtained) {
+		var xmlHttp = null;
+		var img = new Image();
+
+		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
+		map_img.appendChild(img);
+		info.innerHTML = "Lat: " + latitude + " Lon:" + longitude;
+		id = generate_id();
+		track_location(latitude, longitude, id);
+	} else {
+		info.innerHTML = "Unable to retrieve your location";
+	}
+
+}
+
 function toggle_tracking() {
 	if ( !tracking_active ) {
 		tracking_active = 1;
-		tracking_active_id = setInterval ("show_location()", 10000);
+		tracking_active_id = setInterval ("get_location()", 10000);
 		$("#toggle_tracking_btn").text("Stop tracking");
 	} else {
 		tracking_active = 0;
