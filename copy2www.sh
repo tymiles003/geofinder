@@ -1,7 +1,7 @@
 #!/bin/bash
-zip -b . geofinder.zip *
+#zip -b . geofinder.zip *
 
-sudo cp -f geofinder.zip manifest.webapp index.html map.php settings.php tracker.php /var/www/
+sudo cp -f manifest.webapp index.html map.php settings.php tracker.php /var/www/
 sudo cp -f images/* /var/www/images/
 sudo cp -f script/* /var/www/script/
 sudo cp -f style/* /var/www/style/

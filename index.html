@@ -6,6 +6,7 @@
 <head><title>GeoFinder</title></head>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
 <script type="text/javascript" src="script/location.js"></script>
 <script type="text/javascript" src="script/settings.js"></script>
 
@@ -15,7 +16,10 @@
 	<button id="toggle_tracking_btn" >Start tracking</button>
 	<button id="tracker_link_btn">Send tracker link</button>
 	<div id="info"></div>
-	<div id="map"></div>
+	<div style="width:100%; height:100%" id="map"></div>
+	<script type="text/javascript">
+	show_map();
+	</script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			$("#tracker_link_btn").hide();

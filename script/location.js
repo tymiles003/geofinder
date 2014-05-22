@@ -43,19 +43,21 @@ function track_location(lat, lon, id) {
 }
 
 function show_location() {
-	var map_img = document.getElementById("map");
-
+/*	var map_img = document.getElementById("map");
+*/
 	if (!navigator.geolocation){
 		$("#info").html("<p>Geolocation is not supported by your browser</p>");
 		return;
 	}
 
 	if (location_obtained) {
-		var xmlHttp = null;
+/*		var xmlHttp = null;
 		var img = new Image();
-
+*/
+/*
 		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 		map_img.appendChild(img);
+*/
 		$("#info").html("Lat: " + latitude + " Lon:" + longitude);
 		id = generate_id();
 		track_location(latitude, longitude, id);
@@ -65,6 +67,16 @@ function show_location() {
 		$("#info").html("Locating...");
 	}
 
+}
+function show_map() {
+	var map = new OpenLayers.Map('map');
+	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
+	var fromProjection = new OpenLayers.Projection("EPSG:4326");
+	var toProjection   = new OpenLayers.Projection("EPSG:900913");
+	var position       = new OpenLayers.LonLat(-8, 52).transform( fromProjection, toProjection );
+	var zoom           = 14;
+	map.addLayer(osm_layer);
+	map.setCenter(position, zoom );
 }
 
 function toggle_tracking() {
