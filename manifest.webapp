@@ -8,13 +8,12 @@
 	},
 	"default_locale": "en-EN",
 	"icons": {
-		"16": "/images/geofinder-16.png",
-		"30": "/images/geofinder-30.png",
-		"32": "/images/geofinder-32.png",
-		"60": "/images/geofinder-60.png",
-		"90": "/images/geofinder-90.png",
-		"120": "/images/geofinder-120.png",
-		"256": "/images/geofinder-256.png"
+		"16": "/images/geofinder-16x16.png",
+		"32": "/images/geofinder-32x32.png",
+		"60": "/images/geofinder-60x60.png",
+		"90": "/images/geofinder-90x90.png",
+		"128": "/images/geofinder-128x128.png",
+		"256": "/images/geofinder-256x256.png"
 	},
 	"permissions": {
 		"geolocation": {
