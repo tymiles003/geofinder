@@ -1,4 +1,3 @@
-1. Split show_location function. Obtaining location has to be separate.
 2. Fix multiple images when tracking
 3. Track to one tid, instead of generating new one every tiime show_location is called
 4. Move generating tid to php file (server)
