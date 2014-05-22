@@ -62,7 +62,7 @@ function show_location() {
 		$("#info").html("Lat: " + latitude + " Lon:" + longitude);
 		id = generate_id();
 		track_location(latitude, longitude, id);
-		tracker_link = "http://www.geofinder.eu/map.php?tid=" + id;
+		tracker_link = server + "map.php?tid=" + id;
 		$("#tracker_link_btn").slideDown();
 	} else {
 		$("#info").html("Locating...");
