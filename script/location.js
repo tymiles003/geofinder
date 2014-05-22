@@ -1,5 +1,7 @@
 const server = "http://www.geofinder.eu/";
 const tracker = "tracker.php/";
+const mail_header = "mailto:?subject=GeoFinder%20link&body="
+var tracker_link = "";
 var tracking_active = 0;
 var tracking_active_id = 0;
 var location_obtained = 0;
@@ -60,7 +62,7 @@ function show_location() {
 		$("#info").html("Lat: " + latitude + " Lon:" + longitude);
 		id = generate_id();
 		track_location(latitude, longitude, id);
-		$("#tracker_link").html("<a href=http://www.geofinder.eu/map.php?tid=" + id + ">Link to your tracker</a>");
+		tracker_link = "http://www.geofinder.eu/map.php?tid=" + id;
 	} else {
 		$("#info").html("Locating...");
 	}
