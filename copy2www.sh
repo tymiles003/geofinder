@@ -11,4 +11,4 @@ sudo chown -R www-data:www-data /var/www/style/*
 sudo chown -R www-data:www-data /var/www/*.php
 sudo chown -R www-data:www-data /var/www/*.html
 sudo chown -R www-data:www-data /var/www/manifest.webapp
-sudo chown -R www-data:www-data /var/www/geofinder.zip
+#sudo chown -R www-data:www-data /var/www/geofinder.zip
