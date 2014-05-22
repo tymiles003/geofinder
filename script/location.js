@@ -1,6 +1,3 @@
-const server = "http://www.geofinder.eu/";
-const tracker = "tracker.php/";
-const mail_header = "mailto:?subject=GeoFinder%20link&body="
 var tracker_link = "";
 var tracking_active = 0;
 var tracking_active_id = 0;
