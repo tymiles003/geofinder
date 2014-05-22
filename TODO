@@ -1,4 +1,4 @@
 2. Fix multiple images when tracking
 3. Track to one tid, instead of generating new one every tiime show_location is called
 4. Move generating tid to php file (server)
-5. Add "share tracker" button
+5. Add sms option <a href="sms:+1234567890?body=message">SMS Link</a>
