@@ -6,20 +6,11 @@
 
 <?php
 	include "settings.php";
-	$info['timestamp'] = $_GET['timestamp'];
 	$lat = round($_GET['lat'], $accuracy);
 	$info['lat'] = $lat;
 	$lon = round($_GET['lon'], $accuracy);
 	$info['lon'] = $lon;
-	$info['hdop'] = $_GET['hdop'];
-	$info['altitude'] = $_GET['altitude'];
-	$info['speed'] = $_GET['speed'];
-	$info['bearing'] = $_GET['bearing'];
 	$tid = $_GET['tid'];
-	$fpath = $filePath . '-' . $tid;
-	$fh = fopen($fpath, 'w');
-	fwrite($fh, serialize($info));
-	fclose($fh);
 
 	$con=mysqli_connect("localhost", "tracker", "write", "geo");
 	if (mysqli_connect_errno()) {

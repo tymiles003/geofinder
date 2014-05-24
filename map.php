@@ -9,24 +9,9 @@
 <?php
 	include "settings.php";
 	$tid = $_GET['tid'];
-	$loc_string = file_get_contents($filePath . '-' . $tid);
-	$info = unserialize($loc_string);
-	$lat = $info['lat'];
-	$lon = $info['lon'];
-        $timestamp = $info['timestamp'];
-        $hdop = $info['hdop'];
-        $altitude = $info['altitude'];
-        $speed = $info['speed'];
-        $bearing = $info['bearing'];
 ?>
 
 <body>
-	<?php echo $lat?>,<?php echo $lon?> </br>
-	<?php echo $timestamp?></br>
-	<?php echo $hdop?></br>
-	<?php echo $altitude?> </br>
-	<?php echo $speed?></br>
-	<?php echo $bearing?></br>
 	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
