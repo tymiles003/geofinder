@@ -56,7 +56,7 @@ function show_location() {
 		tracker_link = server + "map.php?tid=" + id;
 		$("#tracker_link_btn").slideDown();
 	} else {
-		$("#info").html("Locating...");
+		$("#info").text("Locating...");
 	}
 
 }
