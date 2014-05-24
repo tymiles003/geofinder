@@ -1,6 +1,10 @@
 <!-- This file shows location on map. It has to be called with &tid=..... to pull info from correcponding location file -->
 <html>
-<head> <title>Location</title> </head>
+<head> <title>Location</title>
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+<script type="text/javascript" src="script/location.js"></script>
+<script type="text/javascript" src="script/settings.js"></script>
+</head>
 
 <?php
 	include "settings.php";
@@ -23,7 +27,10 @@
 	<?php echo $altitude?> </br>
 	<?php echo $speed?></br>
 	<?php echo $bearing?></br>
-	<img src= "http://staticmap.openstreetmap.de/staticmap.php?center=<?php echo $info['lat']?>,<?php echo $info['lon']?>&zoom=14&size=800x600&markers=<?php echo $info['lat']?>,<?php echo $info['lon']?>,ol-marker" >
+	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
+	<script>
+		show_map(<?php echo $lat ?>, <?php echo $lon ?>);
+	</script>
 </body>
 </html>
 
