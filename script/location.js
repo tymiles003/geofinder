@@ -50,7 +50,6 @@ function show_location() {
 
 	if (location_obtained) {
 		show_map(latitude, longitude);
-		$("#info").html("Lat: " + latitude + " Lon:" + longitude);
 		id = generate_id();
 		track_location(latitude, longitude, id);
 		tracker_link = server + "map.php?tid=" + id;
