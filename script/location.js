@@ -54,6 +54,7 @@ function show_location() {
 		track_location(latitude, longitude, tid);
 		tracker_link = server + "map.php?tid=" + tid;
 		$("#tracker_link_btn").slideDown();
+		$("#info").text("");
 	} else {
 		$("#info").text("Locating...");
 	}
