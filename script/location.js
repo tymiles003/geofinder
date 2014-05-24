@@ -43,22 +43,13 @@ function track_location(lat, lon, id) {
 }
 
 function show_location() {
-/*	var map_img = document.getElementById("map");
-*/
 	if (!navigator.geolocation){
 		$("#info").html("<p>Geolocation is not supported by your browser</p>");
 		return;
 	}
 
 	if (location_obtained) {
-/*		var xmlHttp = null;
-		var img = new Image();
-*/
 		show_map(latitude, longitude);
-/*
-		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
-		map_img.appendChild(img);
-*/
 		$("#info").html("Lat: " + latitude + " Lon:" + longitude);
 		id = generate_id();
 		track_location(latitude, longitude, id);
