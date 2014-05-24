@@ -54,6 +54,7 @@ function show_location() {
 /*		var xmlHttp = null;
 		var img = new Image();
 */
+		show_map(latitude, longitude);
 /*
 		img.src = "http://staticmap.openstreetmap.de/staticmap.php?center=" + latitude + "," + longitude + "&zoom=14&size=300x300&markers=" + latitude + "," + longitude + ",ol-marker";
 		map_img.appendChild(img);
@@ -68,12 +69,12 @@ function show_location() {
 	}
 
 }
-function show_map() {
+function show_map(lat, lon) {
 	var map = new OpenLayers.Map('map');
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
 	var fromProjection = new OpenLayers.Projection("EPSG:4326");
 	var toProjection   = new OpenLayers.Projection("EPSG:900913");
-	var position       = new OpenLayers.LonLat(-8, 52).transform( fromProjection, toProjection );
+	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	var zoom           = 14;
 	map.addLayer(osm_layer);
 	map.setCenter(position, zoom );
