@@ -1,5 +1,7 @@
-2. Make style for map - zoom buttons are too small
 3. Track to one tid, instead of generating new one every tiime show_location is called
 4. Move generating tid to php file (server)
 5. Add sms option <a href="sms:+1234567890?body=message">SMS Link</a>
 6. Add button to bring map back to user position
+Far future options:
+1. Make style for map - zoom buttons are too small
+2. Dynamically chagne trackinf time depending on speed
