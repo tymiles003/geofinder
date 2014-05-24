@@ -75,7 +75,7 @@ function toggle_tracking() {
 	if ( !tracking_active ) {
 		tracking_active = 1;
 		get_location();
-		tracking_active_id = setInterval ("get_location()", 10000);
+		tracking_active_id = setInterval ("get_location()", tracking_interval);
 		$("#toggle_tracking_btn").text("Stop tracking");
 	} else {
 		tracking_active = 0;
