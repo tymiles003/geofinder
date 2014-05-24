@@ -1,3 +1,4 @@
+var tid = "";
 var tracker_link = "";
 var tracking_active = 0;
 var tracking_active_id = 0;
@@ -6,13 +7,13 @@ var latitude;
 var longitude;
 
 function generate_id() {
-	var tid = "";
+	var id = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 	for( var i = 0; i < 5; i++ )
-		tid += possible.charAt(Math.floor(Math.random() * possible.length));
+		id += possible.charAt(Math.floor(Math.random() * possible.length));
 
-	return tid;
+	return id;
 }
 
 function get_location() {
@@ -50,9 +51,8 @@ function show_location() {
 
 	if (location_obtained) {
 		show_map(latitude, longitude);
-		id = generate_id();
-		track_location(latitude, longitude, id);
-		tracker_link = server + "map.php?tid=" + id;
+		track_location(latitude, longitude, tid);
+		tracker_link = server + "map.php?tid=" + tid;
 		$("#tracker_link_btn").slideDown();
 	} else {
 		$("#info").text("Locating...");
@@ -73,11 +73,13 @@ function show_map(lat, lon) {
 function toggle_tracking() {
 	if ( !tracking_active ) {
 		tracking_active = 1;
+		tid = generate_id();
 		get_location();
 		tracking_active_id = setInterval ("get_location()", tracking_interval);
 		$("#toggle_tracking_btn").text("Stop tracking");
 	} else {
 		tracking_active = 0;
+		tid = "";
 		location_obtained = 0;
 		clearInterval (tracking_active_id);
 		$("#toggle_tracking_btn").text("Start tracking");
