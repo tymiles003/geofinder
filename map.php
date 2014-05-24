@@ -27,9 +27,30 @@
 	<?php echo $altitude?> </br>
 	<?php echo $speed?></br>
 	<?php echo $bearing?></br>
+	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
+	if (mysqli_connect_errno()) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
+	$sql="SELECT latitude, longitude FROM location WHERE tid = '" . $tid . "';";
+	$i = 0;
+	if ($track_points = mysqli_query($con,$sql)) {
+		while ($row = mysqli_fetch_array($track_points)):
+			$latsql = $row['latitude'];
+			$lonsql = $row['longitude'];
+			$track_points_arr[$i][0] = $latsql;
+			$track_points_arr[$i][1] = $lonsql;
+			$i = $i + 1;
+		endwhile;
+	} else {
+		echo "Error reading track: " . mysqli_error($con);
+	}
+
+	mysqli_close($con);
+	?>
 	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script>
-		show_map(<?php echo $lat ?>, <?php echo $lon ?>);
+		show_map(<?php echo $track_points_arr[0][0] ?>, <?php echo $track_points_arr[0][1] ?>);
 	</script>
 </body>
 </html>
