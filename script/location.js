@@ -53,7 +53,8 @@ function show_location() {
 		show_map(latitude, longitude);
 		track_location(latitude, longitude, tid);
 		tracker_link = server + "map.php?tid=" + tid;
-		$("#tracker_link_btn").slideDown();
+		$("#email_link_btn").slideDown();
+		$("#sms_link_btn").slideDown();
 		$("#info").text("");
 	} else {
 		$("#info").text("Locating...");
@@ -102,6 +103,7 @@ function toggle_tracking() {
 		location_obtained = 0;
 		clearInterval (tracking_active_id);
 		$("#toggle_tracking_btn").text("Start tracking");
-		$("#tracker_link_btn").slideUp();
+		$("#email_link_btn").slideUp();
+		$("#sms_link_btn").slideUp();
 	}
 }
