@@ -38,7 +38,11 @@ echo "<script> var javascript_array = ". $js_array . ";</script>\n";
 	?>
 	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script>
+		var map = new OpenLayers.Map('map');
+		var fromProjection = new OpenLayers.Projection("EPSG:4326");
+		var toProjection   = new OpenLayers.Projection("EPSG:900913");
 		show_map(<?php echo $track_points_arr[$arr_len][0] ?>, <?php echo $track_points_arr[$arr_len][1] ?>);
+		add_track(javascript_array);
 	</script>
 </body>
 </html>

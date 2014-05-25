@@ -60,11 +60,9 @@ function show_location() {
 	}
 
 }
+
 function show_map(lat, lon) {
-	var map = new OpenLayers.Map('map');
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
-	var fromProjection = new OpenLayers.Projection("EPSG:4326");
-	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	var zoom           = 14;
 	map.addLayer(osm_layer);
@@ -77,6 +75,18 @@ function show_map(lat, lon) {
 	var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
 	var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png', size, offset);
 	markers.addMarker(new OpenLayers.Marker(position ,icon));
+}
+
+function add_track(tp) {
+	var track = new OpenLayers.Geometry.LineString();
+	for (var i = 0; i < tp.length; i++) {
+		var point = new OpenLayers.Geometry.Point( tp[i][1], tp[i][0] ).transform( fromProjection, toProjection );
+		track.addComponent(point);
+	}
+	var feat = new OpenLayers.Feature.Vector(track);
+	var track_layer = new OpenLayers.Layer.Vector("Track Layer");
+	track_layer.addFeatures(feat);
+	map.addLayer(track_layer);
 }
 
 function toggle_tracking() {
