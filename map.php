@@ -27,15 +27,18 @@
 			$track_points_arr[$i][1] = $lonsql;
 			$i = $i + 1;
 		endwhile;
+		$arr_len = $i - 1;
 	} else {
 		echo "Error reading track: " . mysqli_error($con);
 	}
 
 	mysqli_close($con);
+$js_array = json_encode($track_points_arr);
+echo "<script> var javascript_array = ". $js_array . ";</script>\n";
 	?>
 	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script>
-		show_map(<?php echo $track_points_arr[0][0] ?>, <?php echo $track_points_arr[0][1] ?>);
+		show_map(<?php echo $track_points_arr[$arr_len][0] ?>, <?php echo $track_points_arr[$arr_len][1] ?>);
 	</script>
 </body>
 </html>
