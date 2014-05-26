@@ -91,8 +91,9 @@ function add_track(map, tp) {
 	var feat = new OpenLayers.Feature.Vector(track);
 
 	var styleMap = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults({
-				fillOpacity: 1,
-				strokeColor: "black"},
+				fillOpacity:1,
+				strokeWidth:"9",
+				strokeColor:"blue"},
 				OpenLayers.Feature.Vector.style["default"])
 			);
 
