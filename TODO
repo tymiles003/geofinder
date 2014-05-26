@@ -2,7 +2,9 @@
 2. Base layout on dpi and aspect-ratio
 3. Map doesn't show correctly the first time
 4. Move generating tid to php file (server) (needed?)
+5. Don't add multiple markers on tracker side
 6. Add square button to bring map back to user position and the right top corner
+7. Show track on tracker side
 Far future options:
 1. Make style for map - zoom buttons are too small
 2. Dynamically chagne trackinf time depending on speed
