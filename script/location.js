@@ -68,7 +68,6 @@ function show_map(map, lat, lon) {
 	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
 	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
-	var zoom           = 14;
 	map.addLayer(osm_layer);
 	map.setCenter(position, zoom );
 
