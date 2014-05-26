@@ -89,7 +89,14 @@ function add_track(map, tp) {
 		track.addComponent(point);
 	}
 	var feat = new OpenLayers.Feature.Vector(track);
-	var track_layer = new OpenLayers.Layer.Vector("Track Layer");
+
+	var styleMap = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults({
+				fillOpacity: 1,
+				strokeColor: "black"},
+				OpenLayers.Feature.Vector.style["default"])
+			);
+
+	var track_layer = new OpenLayers.Layer.Vector("Track Layer", {styleMap: styleMap});
 	track_layer.addFeatures(feat);
 	map.addLayer(track_layer);
 }
