@@ -1,4 +1,3 @@
-<!-- This file shows location on map. It has to be called with &tid=..... to pull info from correcponding location file -->
 <html>
 <head> <title>Location</title>
 <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>

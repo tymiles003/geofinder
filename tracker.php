@@ -1,9 +1,3 @@
-<!-- This file writes location to server file. It should be called with:
-	&lat=.....
-	&lon=.....
-	&tid=.....
--->
-
 <?php
 	include "settings.php";
 	$lat = round($_GET['lat'], $accuracy);
