@@ -109,5 +109,6 @@ function toggle_tracking() {
 		$("#toggle_tracking_btn").text("Start tracking");
 		$("#email_link_btn").slideUp();
 		$("#sms_link_btn").slideUp();
+		$("#map").slideUp();
 	}
 }
