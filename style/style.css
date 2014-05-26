@@ -1,11 +1,23 @@
-body	{ font-size:2em; }
-button	{ width:100vw;
-	  height:15vh;
-	  font-size:3em; }
-.button_small	{ width:49vw;
-	  height:15vh;
-	  font-size:2em; }
-img	{ width:100% }
+body		{
+	font-size:2em;
+}
+
+button		{
+	width:100vw;
+	height:15vh;
+	font-size:3em;
+}
+
+.button_small	{
+	width:49vw;
+	height:15vh;
+	font-size:2em;
+}
+
+img		{
+	width:100%
+}
+
 .map_style	{
 	width:100vw;
 	top:16vh;
