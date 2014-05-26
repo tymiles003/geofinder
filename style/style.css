@@ -2,7 +2,7 @@ body	{ font-size:2em; }
 button	{ width:100%;
 	  height:2em;
 	  font-size:3em; }
-.button_small	{ width:49.5%;
+.button_small	{ width:48vw;
 	  height:2em;
-	  font-size:2.5em; }
+	  font-size:1.5em; }
 img	{ width:100% }
