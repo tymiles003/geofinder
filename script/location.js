@@ -50,11 +50,12 @@ function show_location() {
 	}
 
 	if (location_obtained) {
-		show_map(latitude, longitude);
+		show_map(map, latitude, longitude);
 		track_location(latitude, longitude, tid);
 		tracker_link = server + "map.php?tid=" + tid;
 		$("#email_link_btn").slideDown();
 		$("#sms_link_btn").slideDown();
+		$("#map").show();
 		$("#info").text("");
 	} else {
 		$("#info").text("Locating...");
@@ -62,7 +63,9 @@ function show_location() {
 
 }
 
-function show_map(lat, lon) {
+function show_map(map, lat, lon) {
+	var fromProjection = new OpenLayers.Projection("EPSG:4326");
+	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
 	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	var zoom           = 14;
@@ -78,7 +81,9 @@ function show_map(lat, lon) {
 	markers.addMarker(new OpenLayers.Marker(position ,icon));
 }
 
-function add_track(tp) {
+function add_track(map, tp) {
+	var fromProjection = new OpenLayers.Projection("EPSG:4326");
+	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var track = new OpenLayers.Geometry.LineString();
 	for (var i = 0; i < tp.length; i++) {
 		var point = new OpenLayers.Geometry.Point( tp[i][1], tp[i][0] ).transform( fromProjection, toProjection );

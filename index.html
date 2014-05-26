@@ -20,9 +20,11 @@
 	<div id="info" style="font-size:3em;" ></div>
 	<div id="map" style="width:100%; top: 14em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script type="text/javascript">
+		var map = new OpenLayers.Map('map');
 		$( document ).ready(function() {
 			$("#email_link_btn").hide();
 			$("#sms_link_btn").hide();
+			$("#map").hide();
 			$("#toggle_tracking_btn").click(function(){
 				toggle_tracking();
 			});
