@@ -6,3 +6,11 @@ button	{ width:100vw;
 	  height:15vh;
 	  font-size:2em; }
 img	{ width:100% }
+.map_style	{
+	width:100vw;
+	top:16vh;
+	left:1vw;
+	bottom:16vh;
+	right:1vh;
+	position: fixed;
+}
