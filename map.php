@@ -33,12 +33,13 @@
 
 	mysqli_close($con);
 	$js_track_points_arr = json_encode($track_points_arr);
-	echo "<script> var tp_array = ". $js_track_points_arr  . ";</script>\n";
+	echo "<script> var tp_array = " . $js_track_points_arr . "\n";
+	echo "var tp_len = " . $arr_len . "; </script>\n";
 	?>
 	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script>
 		var map = new OpenLayers.Map('map');
-		show_map(map, <?php echo $track_points_arr[$arr_len][0] ?>, <?php echo $track_points_arr[$arr_len][1] ?>);
+		show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
 		add_track(map, tp_array);
 	</script>
 </body>
