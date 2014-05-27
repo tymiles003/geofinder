@@ -5,13 +5,13 @@ body		{
 button		{
 	width:100vw;
 	height:15vh;
-	font-size:3em;
+	font-size:8vh;
 }
 
 .button_small	{
 	width:49vw;
 	height:15vh;
-	font-size:2em;
+	font-size:5vh;
 }
 
 img		{
