@@ -6,9 +6,6 @@ var location_obtained = 0;
 var latitude;
 var longitude;
 
-var fromProjection = new OpenLayers.Projection ( "EPSG:4326" );
-var toProjection = new OpenLayers.Projection ( "EPSG:900913" );
-
 function generate_id() {
 	var id = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

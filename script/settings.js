@@ -4,3 +4,6 @@ const mail_header = "mailto:?subject=GeoFinder%20link&body="
 const sms_header = "sms:?body="
 const tracking_interval = 10000; 
 const zoom = 16;
+
+var fromProjection = new OpenLayers.Projection ( "EPSG:4326" );
+var toProjection = new OpenLayers.Projection ( "EPSG:900913" );
