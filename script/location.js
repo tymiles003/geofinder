@@ -3,6 +3,7 @@ var tracker_link = "";
 var tracking_active = 0;
 var tracking_active_id = 0;
 var location_obtained = 0;
+var location_obtained = 0;
 var latitude;
 var longitude;
 
@@ -65,15 +66,15 @@ function show_location() {
 }
 
 function add_marker (map, lat, lon) {
-	var fromProjection = new OpenLayers.Projection("EPSG:4326");
-	var toProjection   = new OpenLayers.Projection("EPSG:900913");
+	var fromProjection = new OpenLayers.Projection ( "EPSG:4326" );
+	var toProjection = new OpenLayers.Projection ( "EPSG:900913" );
 	var markers = new OpenLayers.Layer.Markers( "Markers" );
-	map.addLayer(markers);
-	var size = new OpenLayers.Size(42,50);
-	var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
-	var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png', size, offset);
-	var position  = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
-	markers.addMarker(new OpenLayers.Marker(position ,icon));
+	map.addLayer (markers);
+	var size = new OpenLayers.Size (42,50);
+	var offset = new OpenLayers.Pixel (-(size.w/2), -size.h);
+	var icon = new OpenLayers.Icon ('http://www.openlayers.org/dev/img/marker.png', size, offset);
+	var position  = new OpenLayers.LonLat (lon, lat).transform (fromProjection, toProjection);
+	markers.addMarker(new OpenLayers.Marker (position ,icon));
 }
 
 function show_map(map, lat, lon) {
