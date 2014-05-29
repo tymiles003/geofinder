@@ -5,6 +5,7 @@
 5. Don't add multiple markers on tracker side
 6. Add square button to bring map back to user position and the right top corner
 7. Show track on tracker side
+8. Experiment with timeout, interval max time for gps fix
 Far future options:
 1. Make style for map - zoom buttons are too small
 2. Dynamically chagne trackinf time depending on speed
