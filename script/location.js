@@ -3,7 +3,6 @@ var tracker_link = "";
 var tracking_active = 0;
 var tracking_active_id = 0;
 var location_obtained = 0;
-var location_obtained = 0;
 var latitude;
 var longitude;
 
