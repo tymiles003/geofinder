@@ -51,6 +51,7 @@ function show_location() {
 
 	if (location_obtained) {
 		show_map(map, latitude, longitude);
+		add_marker(map, latitude, longitude);
 		track_location(latitude, longitude, tid);
 		tracker_link = server + "map.php?tid=" + tid;
 		$("#email_link_btn").slideDown();
@@ -82,7 +83,6 @@ function show_map(map, lat, lon) {
 	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	map.addLayer(osm_layer);
 	map.setCenter(position, zoom );
-	add_marker(map, lat, lon);
 }
 
 function add_track(map, tp) {
