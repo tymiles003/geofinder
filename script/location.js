@@ -7,6 +7,9 @@ var location_obtained = 0;
 var latitude;
 var longitude;
 
+var fromProjection = new OpenLayers.Projection ( "EPSG:4326" );
+var toProjection = new OpenLayers.Projection ( "EPSG:900913" );
+
 function generate_id() {
 	var id = "";
 	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -66,8 +69,6 @@ function show_location() {
 }
 
 function add_marker (map, lat, lon) {
-	var fromProjection = new OpenLayers.Projection ( "EPSG:4326" );
-	var toProjection = new OpenLayers.Projection ( "EPSG:900913" );
 	var markers = new OpenLayers.Layer.Markers( "Markers" );
 	map.addLayer (markers);
 	var size = new OpenLayers.Size (42,50);
@@ -78,8 +79,6 @@ function add_marker (map, lat, lon) {
 }
 
 function show_map(map, lat, lon) {
-	var fromProjection = new OpenLayers.Projection("EPSG:4326");
-	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
 	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	map.addLayer(osm_layer);
@@ -87,8 +86,6 @@ function show_map(map, lat, lon) {
 }
 
 function add_track(map, tp) {
-	var fromProjection = new OpenLayers.Projection("EPSG:4326");
-	var toProjection   = new OpenLayers.Projection("EPSG:900913");
 	var track = new OpenLayers.Geometry.LineString();
 	for (var i = 0; i < tp.length; i++) {
 		var point = new OpenLayers.Geometry.Point( tp[i][1], tp[i][0] ).transform( fromProjection, toProjection );
