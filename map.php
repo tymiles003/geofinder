@@ -41,6 +41,7 @@
 		var map = new OpenLayers.Map('map');
 		show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
 		add_track(map, tp_array);
+		add_marker (map, tp_array[tp_len][0], tp_array[tp_len][1]);
 	</script>
 </body>
 </html>
