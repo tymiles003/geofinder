@@ -19,8 +19,8 @@ function generate_id() {
 }
 
 function get_location() {
-	latitude  = 52.87;
-	longitude = -8.60;
+	latitude  = 52.87 + ( Math.random() / 10);
+	longitude = -8.60 + ( Math.random() / 10);
 	track_points.push([ latitude, longitude ]);
 	tp_max = tp_max + 1;
 	location_obtained = 1; 
