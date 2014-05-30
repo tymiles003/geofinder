@@ -17,6 +17,13 @@ function generate_id() {
 }
 
 function get_location() {
+	latitude  = 52.87;
+	longitude = -8.60;
+	location_obtained = 1; 
+	show_location();
+}
+
+function get_location_real() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
