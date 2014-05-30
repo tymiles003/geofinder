@@ -5,6 +5,8 @@ var tracking_active_id = 0;
 var location_obtained = 0;
 var latitude;
 var longitude;
+var tp_max = 0;
+var track_points = [];
 
 function generate_id() {
 	var id = "";
@@ -19,8 +21,11 @@ function generate_id() {
 function get_location() {
 	latitude  = 52.87;
 	longitude = -8.60;
+	track_points.push([ latitude, longitude ]);
+	tp_max = tp_max + 1;
 	location_obtained = 1; 
 	show_location();
+	add_track (map, track_points);
 }
 
 function get_location_real() {
@@ -34,6 +39,8 @@ function get_location_real() {
 		latitude  = position.coords.latitude;
 		longitude = position.coords.longitude;
 		location_obtained = 1; 
+		track_points.push([ latitude, longitude ]);
+		tp_max = tp_max + 1;
 	};
 
 	function error() {
