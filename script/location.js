@@ -74,9 +74,9 @@ function show_location() {
 function add_marker (map, lat, lon) {
 	var markers = new OpenLayers.Layer.Markers( "Markers" );
 	map.addLayer (markers);
-	var size = new OpenLayers.Size (45, 57);
-	var offset = new OpenLayers.Pixel (-(size.w/2), -size.h);
-	var icon = new OpenLayers.Icon (marker_file, size, offset);
+	var marker_size = new OpenLayers.Size (45, 57);
+	var offset = new OpenLayers.Pixel (-(marker_size.w/2), -marker_size.h);
+	var icon = new OpenLayers.Icon (marker_file, marker_size, offset);
 	var position  = new OpenLayers.LonLat (lon, lat).transform (fromProjection, toProjection);
 	markers.addMarker(new OpenLayers.Marker (position ,icon));
 }
