@@ -85,7 +85,8 @@ function add_marker (map, lat, lon) {
 	var offset = new OpenLayers.Pixel (-(marker_size.w/2), -marker_size.h);
 	var icon = new OpenLayers.Icon (marker_file, marker_size, offset);
 	var position  = new OpenLayers.LonLat (lon, lat).transform (fromProjection, toProjection);
-	markers.addMarker(new OpenLayers.Marker (position ,icon));
+	var marker = new OpenLayers.Marker (position ,icon);
+	markers.addMarker(marker);
 }
 
 function show_map(map, lat, lon) {
