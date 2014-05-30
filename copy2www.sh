@@ -5,6 +5,7 @@ PREFIX="v0.1"
 sudo cp -f manifest.webapp index.html map.php settings.php tracker.php /var/www/$PREFIX/
 
 sudo cp -f images/favicon.ico /var/www/$PREFIX/images/
+sudo cp -f images/blue_marker.png /var/www/$PREFIX/images/
 sudo cp -f images/geofinder-128x128.png /var/www/$PREFIX/images/
 sudo cp -f images/geofinder-16x16.png /var/www/$PREFIX/images/
 sudo cp -f images/geofinder-256x256.png /var/www/$PREFIX/images/
