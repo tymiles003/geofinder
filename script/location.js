@@ -5,7 +5,6 @@ var tracking_active_id = 0;
 var location_obtained = 0;
 var latitude;
 var longitude;
-var tp_max = 0;
 var track_points = [];
 var markers = new OpenLayers.Layer.Markers( "Markers" );
 var marker;
@@ -21,16 +20,6 @@ function generate_id() {
 }
 
 function get_location() {
-	latitude  = 52.87 + ( Math.random() / 10);
-	longitude = -8.60 + ( Math.random() / 10);
-	track_points.push([ latitude, longitude ]);
-	tp_max = tp_max + 1;
-	location_obtained = 1; 
-	show_location();
-	add_track (map, track_points);
-}
-
-function get_location_real() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
@@ -42,7 +31,6 @@ function get_location_real() {
 		longitude = position.coords.longitude;
 		location_obtained = 1; 
 		track_points.push([ latitude, longitude ]);
-		tp_max = tp_max + 1;
 	};
 
 	function error() {
