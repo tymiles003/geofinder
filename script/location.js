@@ -7,6 +7,8 @@ var latitude;
 var longitude;
 var tp_max = 0;
 var track_points = [];
+var markers = new OpenLayers.Layer.Markers( "Markers" );
+var marker;
 
 function generate_id() {
 	var id = "";
@@ -79,13 +81,15 @@ function show_location() {
 }
 
 function add_marker (map, lat, lon) {
-	var markers = new OpenLayers.Layer.Markers( "Markers" );
 	map.addLayer (markers);
 	var marker_size = new OpenLayers.Size (45, 57);
 	var offset = new OpenLayers.Pixel (-(marker_size.w/2), -marker_size.h);
 	var icon = new OpenLayers.Icon (marker_file, marker_size, offset);
 	var position  = new OpenLayers.LonLat (lon, lat).transform (fromProjection, toProjection);
-	var marker = new OpenLayers.Marker (position ,icon);
+	if (marker) {
+		markers.removeMarker (marker); 
+	}
+	marker = new OpenLayers.Marker (position, icon);
 	markers.addMarker(marker);
 }
 
