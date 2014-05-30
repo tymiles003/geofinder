@@ -39,9 +39,13 @@
 	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
 	<script>
 		var map = new OpenLayers.Map('map');
-		show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
-		add_track(map, tp_array);
-		add_marker (map, tp_array[tp_len][0], tp_array[tp_len][1]);
+		var show_id = 0;
+		function show () {
+			show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
+			add_track(map, tp_array);
+			add_marker (map, tp_array[tp_len][0], tp_array[tp_len][1]);
+		}
+		show_id = setInterval ("show()", tracking_interval);
 	</script>
 </body>
 </html>
