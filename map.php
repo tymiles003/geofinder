@@ -36,7 +36,7 @@
 	echo "<script> var tp_array = " . $js_track_points_arr . "\n";
 	echo "var tp_len = " . $arr_len . "; </script>\n";
 	?>
-	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 10vh; right: 0em; position: fixed;">
+	<div id="map" style="width:100%; top: 0vh; left: 0vw; bottom: 10vh; right: 0vw; position: fixed;">
 	<script>
 		var map = new OpenLayers.Map('map');
 		var show_id = 0;
