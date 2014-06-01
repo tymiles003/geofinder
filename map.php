@@ -11,6 +11,7 @@
 ?>
 
 <body>
+	<link rel="stylesheet" href="./style/style.css">
 	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -48,7 +49,7 @@
 		show_id = setInterval ("show()", tracking_interval);
 	</script>
 	<div>
-		<button id="toggle_autocenter_btn">Autocenter</button>
+		<button id="toggle_autocenter_btn" class="button_small">Autocenter</button>
 	</div>
 </body>
 </html>
