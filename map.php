@@ -40,6 +40,11 @@
 	<div id="map" class="map_viewer">
 	<script>
 		var map = new OpenLayers.Map('map');
+	</script>
+	<div>
+		<button id="toggle_autocenter_btn" class="button_small">Autocenter</button>
+	</div>
+	<script>
 		var show_id = 0;
 		function show () {
 			show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
@@ -48,9 +53,6 @@
 		}
 		show_id = setInterval ("show()", tracking_interval);
 	</script>
-	<div>
-		<button id="toggle_autocenter_btn" class="button_small">Autocenter</button>
-	</div>
 </body>
 </html>
 
