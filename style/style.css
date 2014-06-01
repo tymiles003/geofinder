@@ -26,3 +26,12 @@ img		{
 	right:1vw;
 	position: fixed;
 }
+
+.map_viewer	{
+	width:96vw;
+	top:0vh;
+	left:0vw;
+	bottom:10vh;
+	right:0vw;
+	position:fixed;
+}
