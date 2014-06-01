@@ -9,6 +9,7 @@
 9. Split get_location and show_location
 10. Add padding, margin and/or cenreting to all elements. Positioning based on window dimensions is not enough precise
 11. Add "center" button and autocenter on/off button
+12. sql injection check
 Far future options:
 1. Make style for map - zoom buttons are too small
 2. Dynamically chagne trackinf time depending on speed
