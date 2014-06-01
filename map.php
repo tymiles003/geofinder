@@ -36,7 +36,7 @@
 	echo "<script> var tp_array = " . $js_track_points_arr . "\n";
 	echo "var tp_len = " . $arr_len . "; </script>\n";
 	?>
-	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
+	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 10vh; right: 0em; position: fixed;">
 	<script>
 		var map = new OpenLayers.Map('map');
 		var show_id = 0;
@@ -47,6 +47,9 @@
 		}
 		show_id = setInterval ("show()", tracking_interval);
 	</script>
+	<div>
+		<button id="toggle_autocenter_btn">Autocenter</button>
+	</div>
 </body>
 </html>
 
