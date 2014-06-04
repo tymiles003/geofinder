@@ -38,15 +38,16 @@ img		{
 
 /* OpenLayers attribution */
 div.olControlAttribution {
-   font-size: 3vh;
-   bottom: 3px;
+	font-size: 3vh;
+	bottom: 3px;
 }
 
+/* Zoom buttons */
 div.olControlZoom a {
-    font-size: 20vh;
-    height: 15vh;
-    width: 5vw;
-    line-height: 15vh;
-    margin: 1vh;
-    padding: 2vh;
+	font-size: 20vh;
+	height: 15vh;
+	width: 5vw;
+	line-height: 15vh;
+	margin: 1vh;
+	padding: 2vh;
 }
