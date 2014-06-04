@@ -35,3 +35,9 @@ img		{
 	right:0vw;
 	position:fixed;
 }
+
+/* OpenLayers attribution */
+div.olControlAttribution {
+   font-size: 3vh;
+   bottom: 3px;
+}
