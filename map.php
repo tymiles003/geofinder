@@ -11,6 +11,7 @@
 ?>
 
 <body>
+	<link rel="stylesheet" href="./style/style.css">
 	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -36,9 +37,14 @@
 	echo "<script> var tp_array = " . $js_track_points_arr . "\n";
 	echo "var tp_len = " . $arr_len . "; </script>\n";
 	?>
-	<div id="map" style="width:100%; top: 1em; left: 0em; bottom: 0; right: 0em; position: fixed;">
+	<div id="map" class="map_viewer">
 	<script>
 		var map = new OpenLayers.Map('map');
+	</script>
+	<div>
+		<button id="toggle_autocenter_btn" class="button_small">Autocenter</button>
+	</div>
+	<script>
 		var show_id = 0;
 		function show () {
 			show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);

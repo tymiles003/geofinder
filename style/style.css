@@ -26,3 +26,29 @@ img		{
 	right:1vw;
 	position: fixed;
 }
+
+.map_viewer	{
+	width:96vw;
+	top:0vh;
+	left:0vw;
+	bottom:15vh;
+	right:0vw;
+	position:fixed;
+}
+
+/* OpenLayers attribution */
+div.olControlAttribution {
+	font-size: 3vh;
+	bottom: 3px;
+}
+
+/* Zoom buttons */
+div.olControlZoom a {
+	font-size: 20vmin;
+	height: 15vmin;
+	line-height: 10vmin;
+	margin: 1vmin;
+	padding: 2vmin;
+	width: 14vmin;
+	border-radius: 2vmin;
+}
