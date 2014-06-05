@@ -10,6 +10,8 @@
 10. Add padding, margin and/or cenreting to all elements. Positioning based on window dimensions is not enough precise
 11. Add "center" button and autocenter on/off button
 12. sql injection check
+13. Make buttons not active when not tracking (currently hidden)
+14. Sometimes elements are way too big on firefox mobile - why?
 Far future options:
 1. Make style for map - zoom buttons are too small
 2. Dynamically chagne trackinf time depending on speed
