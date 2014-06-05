@@ -1,7 +1,7 @@
 var tid = "";
 var tracker_link = "";
 var tracking_active = 0;
-var tracking_active_id = 0;
+var get_location_id = 0;
 var location_obtained = 0;
 var latitude;
 var longitude;
@@ -20,7 +20,7 @@ function generate_id() {
 	return id;
 }
 
-function get_location() {
+function get_location_mock() {
 	latitude  = 52.87 + ( Math.random() / 10);
 	longitude = -8.60 + ( Math.random() / 10);
 	track_points.push([ latitude, longitude ]);
@@ -30,7 +30,7 @@ function get_location() {
 	add_track (map, track_points);
 }
 
-function get_location_real() {
+function get_location() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
@@ -49,8 +49,8 @@ function get_location_real() {
 		location_obtained = 0; 
 	};
 
-	show_location();
 	navigator.geolocation.getCurrentPosition(success, error, options);
+	show_location();
 }
 
 function track_location(lat, lon, id) {
@@ -65,14 +65,12 @@ function show_location() {
 		return;
 	}
 
-	if (location_obtained) {
+	if (location_obtained == 1)  {
 		show_map(map, latitude, longitude);
 		add_marker(map, latitude, longitude);
-		track_location(latitude, longitude, tid);
-		tracker_link = server + "map.php?tid=" + tid;
-		$("#email_link_btn").slideDown();
-		$("#sms_link_btn").slideDown();
-		$("#map").show();
+		if (tracking_active == 1) {
+			track_location(latitude, longitude, tid);
+		}
 		$("#info").text("");
 	} else {
 		$("#info").text("Locating...");
@@ -120,21 +118,29 @@ function add_track(map, tp) {
 	map.addLayer(track_layer);
 }
 
+function locate() {
+}
+
 function toggle_tracking() {
-	if ( !tracking_active ) {
+	if ( tracking_active == 0) {
 		tracking_active = 1;
 		tid = generate_id();
-		get_location();
-		tracking_active_id = setInterval ("get_location()", tracking_interval);
+		tracker_link = server + "map.php?tid=" + tid;
 		$("#toggle_tracking_btn").text("Stop tracking");
-	} else {
+		$("#email_link_btn").slideDown();
+		$("#sms_link_btn").slideDown();
+	} else { 
 		tracking_active = 0;
 		tid = "";
 		location_obtained = 0;
-		clearInterval (tracking_active_id);
 		$("#toggle_tracking_btn").text("Start tracking");
 		$("#email_link_btn").slideUp();
 		$("#sms_link_btn").slideUp();
 		$("#map").slideUp();
 	}
+}
+
+function init_locating () {
+	get_location();
+	get_location_id = setInterval ("get_location()", tracking_interval);
 }
