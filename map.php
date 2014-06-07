@@ -11,7 +11,7 @@
 ?>
 
 <body>
-	<link rel="stylesheet" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -42,7 +42,7 @@
 		var map = new OpenLayers.Map('map');
 	</script>
 	<div>
-		<button id="toggle_autocenter_btn" class="button_small">Autocenter</button>
+		<button id="toggle_autocenter_btn" class="button_medium button_passive">Autocenter</button>
 	</div>
 	<script>
 		var show_id = 0;
