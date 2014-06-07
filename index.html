@@ -27,6 +27,8 @@
 		$( document ).ready(function() {
 			$("#toggle_tracking_btn").click(function(){
 				toggle_tracking();
+				$("#email_link_btn").toggleClass("button_passive button_active");
+				$("#sms_link_btn").toggleClass("button_passive button_active");
 			});
 			$("#email_link_btn").click(function(){
 				window.location.href = mail_header + tracker_link;			
