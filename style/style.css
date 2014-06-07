@@ -33,6 +33,7 @@ button		{
 .button_medium	{
 	width:47vw;
 	height:15vh;
+	font-size:5vh;
 }
 
 .button_small	{
