@@ -12,7 +12,8 @@
 	<link rel="shortcut icon" href="./images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<div>
-		<button id="toggle_tracking_btn" class="button_large button_active">Start tracking</button>
+		<button id="toggle_tracking_btn" class="button_large button_active">Track!</button>
+		<button id="toggle_autocenter_btn" class="button_small button_passive">[ ]</button>
 	</div>
 	<div id="info"></div>
 	<div id="map" class="map_style">
@@ -20,8 +21,8 @@
 		var map = new OpenLayers.Map('map');
 	</script>
 	<div>
-		<button id="email_link_btn" class="button_small button_passive">Email tracker link</button>
-		<button id="sms_link_btn" class="button_small button_passive">SMS tracker link</button>
+		<button id="email_link_btn" class="button_medium button_passive">Email tracker link</button>
+		<button id="sms_link_btn" class="button_medium button_passive">SMS tracker link</button>
 	</div>
 	<script type="text/javascript">
 		$( document ).ready(function() {
