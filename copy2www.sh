@@ -1,5 +1,5 @@
 #!/bin/bash
-PREFIX=""
+PREFIX="v0.1"
 #zip -b . geofinder.zip *
 
 sudo cp -f manifest.webapp index.html map.php settings.php tracker.php /var/www/$PREFIX/
