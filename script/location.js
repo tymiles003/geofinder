@@ -115,8 +115,6 @@ function toggle_tracking() {
 		tid = generate_id();
 		tracker_link = server + "map.php?tid=" + tid;
 		$("#toggle_tracking_btn").text("Stop tracking");
-		$("#email_link_btn").slideDown();
-		$("#sms_link_btn").slideDown();
 	} else { 
 		tracking_active = 0;
 		tid = "";
