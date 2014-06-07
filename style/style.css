@@ -8,9 +8,17 @@ body		{
 }
 
 button		{
+	display:block;
 	width:96vw;
 	height:15vh;
 	font-size:8vh;
+	border: 1vmin solid #f5f5f5;
+	border-radius: 5vmin;
+	color:#f5f5f5;
+	text-decoration:none;
+	background: #464646;
+	box-shadow: 0 0 1vmin gray;
+	font-weight:bold;
 }
 
 .button_small	{
