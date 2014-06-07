@@ -56,6 +56,7 @@ function show_location() {
 	if (location_obtained == 1)  {
 		show_map(map, latitude, longitude);
 		add_marker(map, latitude, longitude);
+		add_track(map, track_points);
 		if (tracking_active == 1) {
 			track_location(latitude, longitude, tid);
 		}
