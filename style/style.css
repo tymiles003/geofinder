@@ -7,15 +7,18 @@ body		{
 	font-size:9vw;
 }
 
-button		{
+.button_active	{
+	background:#246BB2;
+	color:#f5f5f5;
+}
+
+.button_large	{
 	width:96vw;
 	height:15vh;
 	font-size:8vh;
 	border:1vmin solid #f5f5f5;
 	border-radius:5vmin;
-	color:#f5f5f5;
 	text-decoration:none;
-	background:#246BB2;
 	box-shadow:0 0 1vmin gray;
 	font-weight:bold;
 }
@@ -26,9 +29,7 @@ button		{
 	font-size:5vh;
 	border:1vmin solid #f5f5f5;
 	border-radius:5vmin;
-	color:#f5f5f5;
 	text-decoration:none;
-	background:#246BB2;
 	box-shadow:0 0 1vmin gray;
 	font-weight:bold;
 }
