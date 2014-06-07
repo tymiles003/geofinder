@@ -2,6 +2,11 @@ body		{
 	font-size:2em;
 }
 
+#info {
+	text-align:center;
+	font-size:9vw;
+}
+
 button		{
 	width:96vw;
 	height:15vh;
