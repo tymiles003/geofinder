@@ -122,8 +122,6 @@ function toggle_tracking() {
 		tid = "";
 		location_obtained = 0;
 		$("#toggle_tracking_btn").text("Start tracking");
-		$("#email_link_btn").slideUp();
-		$("#sms_link_btn").slideUp();
 	}
 }
 
