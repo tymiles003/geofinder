@@ -1,10 +1,10 @@
 {
 	"name": "GeoFinder",
 	"description": "GeoFinder - sharing location has never been easier",
-	"version": "0.1",
+	"version": "1.0-rc1",
 	"developer": {
 		"name": "Przemo Firszt",
-		"url": "http://geofinder.eu/"
+		"url": "http://www.geofinder.eu/"
 	},
 	"default_locale": "en-EN",
 	"icons": {
