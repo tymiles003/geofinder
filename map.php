@@ -7,38 +7,8 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<?php
-	include "settings.php";
-	$tid = $_GET['tid'];
-?>
-
 <body>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
-	<?php $con=mysqli_connect("localhost", "tracker", "write", "geo");
-	if (mysqli_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
-
-	$sql="SELECT latitude, longitude FROM location WHERE tid = '" . $tid . "';";
-	$i = 0;
-	if ($track_points = mysqli_query($con,$sql)) {
-		while ($row = mysqli_fetch_array($track_points)):
-			$latsql = $row['latitude'];
-			$lonsql = $row['longitude'];
-			$track_points_arr[$i][0] = $latsql;
-			$track_points_arr[$i][1] = $lonsql;
-			$i = $i + 1;
-		endwhile;
-		$arr_len = $i - 1;
-	} else {
-		echo "Error reading track: " . mysqli_error($con);
-	}
-
-	mysqli_close($con);
-	$js_track_points_arr = json_encode($track_points_arr);
-	echo "<script> var tp_array = " . $js_track_points_arr . "\n";
-	echo "var tp_len = " . $arr_len . "; </script>\n";
-	?>
 	<div id="map" class="map_viewer">
 	<script>
 		var map = new OpenLayers.Map('map');
@@ -49,19 +19,36 @@
 		</button>
 	</div>
 	<script>
+		<?php echo "tid = \"" . $_GET['tid'] . "\";\n"; ?>
 		var show_id = 0;
-		function show () {
-			if (autocenter == 1) {
-				show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
+		function get_track_points() {
+		    $.ajax({
+			url: "track_points.php",
+			data: "tid=" + tid,
+			dataType: "json",
+			success: function(response) {
+				track_points = response;
 			}
-			add_track(map, tp_array);
-			add_marker (map, tp_array[tp_len][0], tp_array[tp_len][1]);
+		    });
 		}
+		function show () {
+			var l;
+			get_track_points();
+			l = track_points.length - 1;
+			if (l > 0) {
+				if (autocenter == 1) {
+					show_map(map, track_points[l][0], track_points[l][1]);
+				}
+				add_track (map, track_points);
+				add_marker (map, track_points[l][0], track_points[l][1]);
+			}
+		}
+		show();
 		show_id = setInterval ("show()", tracking_interval);
-			$("#toggle_autocenter_btn").click(function(){
-				toggle_autocenter();
-				$("#toggle_autocenter_btn").toggleClass("button_on button_active");
-			});
+		$("#toggle_autocenter_btn").click(function(){
+			toggle_autocenter();
+			$("#toggle_autocenter_btn").toggleClass("button_on button_active");
+		});
 	</script>
 </body>
 </html>

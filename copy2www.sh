@@ -2,7 +2,7 @@
 PREFIX="v0.1"
 #zip -b . geofinder.zip *
 
-sudo cp -f manifest.webapp index.html map.php settings.php tracker.php /var/www/$PREFIX/
+sudo cp -f manifest.webapp index.html map.php settings.php tracker.php track_points.php /var/www/$PREFIX/
 
 sudo cp -f images/favicon.ico /var/www/$PREFIX/images/
 sudo cp -f images/blue_marker.png /var/www/$PREFIX/images/
