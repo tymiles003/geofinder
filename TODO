@@ -12,5 +12,7 @@
 14. Sometimes elements are way too big on firefox mobile - why?
 15. Solve prefix problem when switching branches
 Far future options:
+1. Expiring tracks
 2. Dynamically chagne trackinf time depending on speed
 3. Add option to show coordinates in settings
+4. Showing info about when the last point was saved
