@@ -14,9 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<div>
 		<button id="toggle_tracking_btn" class="button_large button_active"></button>
-		<button id="toggle_autocenter_btn" class="button_small button_active">
-			<i class="fa fa-crosshairs"></i>
-		</button>
+		<button id="toggle_autocenter_btn" class="button_small button_active"></button>
 	</div>
 	<div id="info"></div>
 	<div id="map" class="map_style">
@@ -30,6 +28,7 @@
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			$("#toggle_tracking_btn").html(track_start_str);
+			$("#toggle_autocenter_btn").html(autocenter_on_str);
 			$("#email_link_btn").html(email_link_str);
 			$("#sms_link_btn").html(sms_link_str);
 			$("#email_link_btn").attr("disabled", true);
@@ -45,6 +44,7 @@
 				toggle_autocenter();
 				show_location();
 				$("#toggle_autocenter_btn").toggleClass("button_on button_active");
+				$("#toggle_autocenter_btn").html(autocenter_off_str);
 			});
 			$("#email_link_btn").click(function(){
 				window.location.href = mail_header + tracker_link;			
