@@ -1,8 +1,10 @@
 <html>
 <head> <title>Location</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
 <script type="text/javascript" src="script/location.js"></script>
 <script type="text/javascript" src="script/settings.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <?php
@@ -42,16 +44,24 @@
 		var map = new OpenLayers.Map('map');
 	</script>
 	<div>
-		<button id="toggle_autocenter_btn" class="button_medium button_passive">Autocenter</button>
+		<button id="toggle_autocenter_btn" class="button_small button_active">
+			<i class="fa fa-crosshairs"></i>
+		</button>
 	</div>
 	<script>
 		var show_id = 0;
 		function show () {
-			show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
+			if (autocenter == 1) {
+				show_map(map, tp_array[tp_len][0], tp_array[tp_len][1]);
+			}
 			add_track(map, tp_array);
 			add_marker (map, tp_array[tp_len][0], tp_array[tp_len][1]);
 		}
 		show_id = setInterval ("show()", tracking_interval);
+			$("#toggle_autocenter_btn").click(function(){
+				toggle_autocenter();
+				$("#toggle_autocenter_btn").toggleClass("button_on button_active");
+			});
 	</script>
 </body>
 </html>
