@@ -5,7 +5,6 @@
 6. Add square button to bring map back to user position and the right top corner [ACTIVATE]
 7. Show track on tracker side [TBTESTED]
 8. Experiment with timeout, interval max time for gps fix
-9. Split get_location and show_location
 10. Add padding, margin and/or cenreting to all elements. Positioning based on window dimensions is not enough precise (good idea?)
 11. Add "center" button and autocenter on/off button
 12. sql injection check

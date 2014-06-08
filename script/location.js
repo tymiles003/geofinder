@@ -19,7 +19,7 @@ function generate_id() {
 	return id;
 }
 
-function locate() {
+function find_location() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
@@ -38,6 +38,10 @@ function locate() {
 	};
 
 	navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function locate() {
+	find_location();
 	show_location();
 }
 
