@@ -42,7 +42,19 @@ function find_location() {
 
 function locate() {
 	find_location();
-	show_location();
+	if (!navigator.geolocation){
+		$("#info").html("<p>Geolocation is not supported by your browser</p>");
+		return;
+	}
+	if (location_obtained == 1)  {
+		show_location();
+		if (tracking_active == 1) {
+			track_location(latitude, longitude, tid);
+		}
+		$("#info").text("");
+	} else {
+		$("#info").text (locating_str);
+	}
 }
 
 function track_location(lat, lon, id) {
@@ -52,23 +64,9 @@ function track_location(lat, lon, id) {
 }
 
 function show_location() {
-	if (!navigator.geolocation){
-		$("#info").html("<p>Geolocation is not supported by your browser</p>");
-		return;
-	}
-
-	if (location_obtained == 1)  {
-		show_map(map, latitude, longitude);
-		add_marker(map, latitude, longitude);
-		add_track(map, track_points);
-		if (tracking_active == 1) {
-			track_location(latitude, longitude, tid);
-		}
-		$("#info").text("");
-	} else {
-		$("#info").text (locating_str);
-	}
-
+	show_map(map, latitude, longitude);
+	add_marker(map, latitude, longitude);
+	add_track(map, track_points);
 }
 
 function add_marker (map, lat, lon) {
