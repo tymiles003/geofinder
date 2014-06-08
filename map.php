@@ -47,6 +47,7 @@
 		show_id = setInterval ("show()", tracking_interval);
 		$("#toggle_autocenter_btn").click(function(){
 			toggle_autocenter();
+			show_location();
 			$("#toggle_autocenter_btn").toggleClass("button_on button_active");
 		});
 	</script>
