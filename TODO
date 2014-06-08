@@ -3,7 +3,6 @@
 3. Add or die to track_points.php (or proper error handling)
 4. Move generating tid to php file (server) (needed?)
 5. Add error handling to map.php anfer failed ajax query
-7. Move js from map.php to separate file
 8. Experiment with timeout, interval max time for gps fix
 10. Add padding, margin and/or cenreting to all elements. Positioning based on window dimensions is not enough precise (good idea?)
 12. sql injection check

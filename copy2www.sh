@@ -16,6 +16,7 @@ sudo cp -f images/geofinder.svg /var/www/$PREFIX/images/
 
 sudo cp -f script/location.js /var/www/$PREFIX/script/
 sudo cp -f script/settings.js /var/www/$PREFIX/script/
+sudo cp -f script/viewer.js /var/www/$PREFIX/script/
 
 sudo cp -f style/style.css /var/www/$PREFIX/style/
 
