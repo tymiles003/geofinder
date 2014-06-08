@@ -6,7 +6,6 @@
 7. Move js from map.php to separate file
 8. Experiment with timeout, interval max time for gps fix
 10. Add padding, margin and/or cenreting to all elements. Positioning based on window dimensions is not enough precise (good idea?)
-11. Add "center" button and autocenter on/off button
 12. sql injection check
 14. Sometimes elements are way too big on firefox mobile - why?
 15. Solve prefix problem when switching branches
