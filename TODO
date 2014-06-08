@@ -1,5 +1,7 @@
 1. Marker size should be based on dpi 
 2. Base layout on dpi and aspect-ratio
+3. Add or die to track_points.php
+5. Add error handling to map.pg anter failed ajax
 4. Move generating tid to php file (server) (needed?)
 6. Add square button to bring map back to user position and the right top corner [ACTIVATE]
 8. Experiment with timeout, interval max time for gps fix
