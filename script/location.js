@@ -86,7 +86,7 @@ function add_marker (map, lat, lon) {
 
 function show_map(map, lat, lon) {
 	var osm_layer = new OpenLayers.Layer.OSM( "OpenLayers OSM");
-	var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
+	var position = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection );
 	map.addLayer(osm_layer);
 	map.setCenter(position, zoom );
 }
