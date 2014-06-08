@@ -1,7 +1,7 @@
 var tid = "";
 var tracker_link = "";
 var tracking_active = 0;
-var get_location_id = 0;
+var locate_id = 0;
 var location_obtained = 0;
 var latitude;
 var longitude;
@@ -19,7 +19,7 @@ function generate_id() {
 	return id;
 }
 
-function get_location() {
+function locate() {
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 6000,
@@ -107,9 +107,6 @@ function add_track(map, tp) {
 	map.addLayer(track_layer);
 }
 
-function locate() {
-}
-
 function toggle_tracking() {
 	if ( tracking_active == 0) {
 		tracking_active = 1;
@@ -125,6 +122,6 @@ function toggle_tracking() {
 }
 
 function init_locating () {
-	get_location();
-	get_location_id = setInterval ("get_location()", tracking_interval);
+	locate();
+	locate_id = setInterval ("locate()", tracking_interval);
 }
