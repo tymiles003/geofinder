@@ -62,7 +62,7 @@ function show_location() {
 		}
 		$("#info").text("");
 	} else {
-		$("#info").text("Locating...");
+		$("#info").text (locating_str);
 	}
 
 }
@@ -115,12 +115,12 @@ function toggle_tracking() {
 		tracking_active = 1;
 		tid = generate_id();
 		tracker_link = server + "map.php?tid=" + tid;
-		$("#toggle_tracking_btn").text("Stop tracking");
+		$("#toggle_tracking_btn").text(track_stop_str);
 	} else { 
 		tracking_active = 0;
 		tid = "";
 		location_obtained = 0;
-		$("#toggle_tracking_btn").text("Start tracking");
+		$("#toggle_tracking_btn").text(track_start_str);
 	}
 }
 
