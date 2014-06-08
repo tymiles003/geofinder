@@ -8,6 +8,7 @@ var longitude;
 var track_points = [];
 var markers = new OpenLayers.Layer.Markers( "Markers" );
 var marker;
+var autocenter = 1;
 
 function generate_id() {
 	var id = "";
@@ -64,7 +65,9 @@ function track_location(lat, lon, id) {
 }
 
 function show_location() {
-	show_map(map, latitude, longitude);
+	if (autocenter == 1) {
+		show_map(map, latitude, longitude);
+	}
 	add_marker(map, latitude, longitude);
 	add_track(map, track_points);
 }
@@ -120,6 +123,14 @@ function toggle_tracking() {
 		tid = "";
 		location_obtained = 0;
 		$("#toggle_tracking_btn").html(track_start_str);
+	}
+}
+
+function toggle_autocenter() {
+	if ( autocenter == 0) {
+		autocenter = 1;
+	} else { 
+		autocenter = 0;
 	}
 }
 

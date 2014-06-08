@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<div>
 		<button id="toggle_tracking_btn" class="button_large button_active"></button>
-		<button id="toggle_autocenter_btn" class="button_small button_passive">
+		<button id="toggle_autocenter_btn" class="button_small button_active">
 			<i class="fa fa-crosshairs"></i>
 		</button>
 	</div>
@@ -40,6 +40,10 @@
 				$("#sms_link_btn").toggleClass("button_passive button_active");
 				$("#email_link_btn").attr("disabled", false);
 				$("#sms_link_btn").attr("disabled", false);
+			});
+			$("#toggle_autocenter_btn").click(function(){
+				toggle_autocenter();
+				$("#toggle_autocenter_btn").toggleClass("button_on button_active");
 			});
 			$("#email_link_btn").click(function(){
 				window.location.href = mail_header + tracker_link;			
