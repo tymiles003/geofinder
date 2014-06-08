@@ -8,6 +8,8 @@ const zoom = 16;
 const locating_str = "Locating...";
 const track_start_str = "<i class=\"fa fa-road\"></i> Track!";
 const track_stop_str = "<i class=\"fa fa-ban\"></i> Stop!";
+const autocenter_off_str = "<i class=\"fa fa-globe\"></i>";
+const autocenter_on_str = "<i class=\"fa fa-crosshairs\"></i>";
 const email_link_str = "<i class=\"fa fa-send\"></i> Email tracker link";
 const sms_link_str = "<i class=\"fa fa-share-alt\"></i> SMS tracker link";
 

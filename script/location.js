@@ -128,8 +128,10 @@ function toggle_tracking() {
 
 function toggle_autocenter() {
 	if ( autocenter == 0) {
+		$("#toggle_autocenter_btn").html(autocenter_on_str);
 		autocenter = 1;
 	} else { 
+		$("#toggle_autocenter_btn").html(autocenter_off_str);
 		autocenter = 0;
 	}
 }
