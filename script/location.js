@@ -51,9 +51,9 @@ function locate() {
 		if (tracking_active == 1) {
 			track_location(latitude, longitude, tid);
 		}
-		$("#info").text("");
+		$("#info").html("");
 	} else {
-		$("#info").text (locating_str);
+		$("#info").html (locating_str);
 	}
 }
 
@@ -114,12 +114,12 @@ function toggle_tracking() {
 		tracking_active = 1;
 		tid = generate_id();
 		tracker_link = server + "map.php?tid=" + tid;
-		$("#toggle_tracking_btn").text(track_stop_str);
+		$("#toggle_tracking_btn").html(track_stop_str);
 	} else { 
 		tracking_active = 0;
 		tid = "";
 		location_obtained = 0;
-		$("#toggle_tracking_btn").text(track_start_str);
+		$("#toggle_tracking_btn").html(track_start_str);
 	}
 }
 
